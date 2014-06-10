@@ -1,3 +1,3 @@
 source 'https://rubygems.org'
-
-gem 'anemone'
+gem 'ruby-progressbar'
+gem 'thread'
