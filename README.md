@@ -1,5 +1,5 @@
-# VIN Finder
-
+VIN Finder
+============
 Finds VINs using a web crawler through eBay.
 
 ## Requirements
