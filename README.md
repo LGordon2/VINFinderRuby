@@ -14,3 +14,5 @@ Finds VINs using a web crawler through eBay.
 ## Usage
 
   Run `ruby grab_vins.rb`
+  
+  If you need to use a custom url run `ruby grab_vins.rb [url]`
