@@ -32,6 +32,7 @@ vehicle_count = doc.css('div#cbrt div.clt h1.rsHdr span.rcnt').first.content.gsu
 vehicle_count = 10000 if vehicle_count > 10000
 puts "Searching the first #{vehicle_count} vehicles."
 page_count = vehicle_count/50-1 
+page_count = 2
 puts "Searching on #{page_count} pages."
 puts 'Finding all vehicle links...'
 
@@ -67,9 +68,9 @@ end
 pool.wait_until_finished
 
 # Outputting final results and writing to csv.
-vins = vins.compact
+vins = vins.compact.uniq
 puts "#{vins.length} VINs retrieved. Writing to [#{csv_filename}]"
-puts "Retrieval success: #{(((vins.length.to_f) / (50.0*page_count.to_f)) * 100.0).round(2)}%"
+puts "Retrieval success: #{(((vins.length.to_f) / (vehicle_count.to_f)) * 100.0).round(2)}%"
 CSV.open(csv_filename,'wb') do |csv|
   vins.each do |vin|
     csv << [vin]
